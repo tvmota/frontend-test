@@ -19,7 +19,6 @@ export default {
   <ol class="rankingContainer">
     <li
       class="rankingContainer_item"
-      :class="{'rankingContainer_striped': (index%2) > 0}"
       :key="rankingItem.__id"
       @mouseover="rankingItem.tooltipSts = true"
       @mouseout="rankingItem.tooltipSts = false"
@@ -43,10 +42,10 @@ export default {
 
   &_item {
     position: relative;
-  }
-
-  &_striped {
-    background-color: rgba(204, 204, 204, .6);
+    
+    &:nth-child(even) {
+      background-color: rgba(204, 204, 204, .6);
+    }
   }
 }
 </style>
