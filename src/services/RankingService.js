@@ -7,6 +7,12 @@ export async function rankingList () {
     item.totalRate = item.positive + item.negative
     item.negativePercent = Math.round((item.negative / item.totalRate) * 100)
     item.positivePercent = Math.round((item.positive / item.totalRate) * 100)
+    item.tooltipSts = false
   })
+
+  resp.data.sort((item1, item2) => {
+    return item2.totalRate - item1.totalRate
+  })
+
   return resp
 }

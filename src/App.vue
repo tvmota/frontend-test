@@ -1,29 +1,36 @@
 <script type="text/javascript">
 import { rankingList } from './services/RankingService'
+import FooterHome from '@/components/footer/FooterHome.vue'
 
 export default {
   name: 'AppRanking',
+  components: {
+    FooterHome
+  },
   created () {
     let self = this
 
     rankingList()
-      .then(resp => self.$store.dispatch('addRanking', resp.data))
-      .catch(err => console.error(err))
+      .then(resp => {
+        self.$store.dispatch('addRanking', resp.data)
+      }).catch(err => console.error(err))
   }
 }
 </script>
 <template>
-  <div id="app">
+  <div class="content" id="app">
     <router-view/>
+    <FooterHome />
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import './assets/css/_base/_normalize';
+@import './assets/css/_base/_base';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 </style>
