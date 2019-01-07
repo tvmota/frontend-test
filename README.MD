@@ -1,7 +1,10 @@
 ### Intruções para rodar o projeto
 clonar o projeto
+
 cd frontend-test
+
 npm i
+
 npm run serve :D
 
 ### Sobre a Matchbox Brasil
