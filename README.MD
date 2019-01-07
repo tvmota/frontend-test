@@ -1,3 +1,9 @@
+### Intruções para rodar o projeto
+clonar o projeto
+cd frontend-test
+npm i
+npm run serve :D
+
 ### Sobre a Matchbox Brasil
 A Matchbox nasceu para revolucionar a forma como empresas e jovens se conectam e se relacionam. 
 Conheça: http://matchboxbrasil.com
